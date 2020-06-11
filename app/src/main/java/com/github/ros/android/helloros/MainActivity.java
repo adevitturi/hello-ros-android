@@ -1,4 +1,4 @@
-package com.github.jballoffet.helloros;
+package com.github.ros.android.helloros;
 
 import android.os.Bundle;
 import org.ros.android.MessageCallable;
@@ -13,8 +13,6 @@ public class MainActivity extends RosActivity {
   private Talker talker;
 
   public MainActivity() {
-    // The RosActivity constructor configures the notification title and ticker
-    // messages.
     super("Hello ROS", "Hello ROS");
   }
 
@@ -37,17 +35,9 @@ public class MainActivity extends RosActivity {
   @Override
   protected void init(NodeMainExecutor nodeMainExecutor) {
     talker = new Talker();
-
-    // At this point, the user has already been prompted to either enter the URI
-    // of a master to use or to start a master locally.
-
-    // The user can easily use the selected ROS Hostname in the master chooser
-    // activity.
     NodeConfiguration nodeConfiguration = NodeConfiguration.newPublic(getRosHostname());
     nodeConfiguration.setMasterUri(getMasterUri());
     nodeMainExecutor.execute(talker, nodeConfiguration);
-    // The RosTextView is also a NodeMain that must be executed in order to
-    // start displaying incoming messages.
     nodeMainExecutor.execute(rosTextView, nodeConfiguration);
   }
 }

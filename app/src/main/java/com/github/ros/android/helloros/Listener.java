@@ -1,4 +1,4 @@
-package com.github.jballoffet.helloros;
+package com.github.ros.android.helloros;
 
 import org.apache.commons.logging.Log;
 import org.ros.message.MessageListener;

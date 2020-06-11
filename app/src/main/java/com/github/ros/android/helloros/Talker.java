@@ -1,4 +1,4 @@
-package com.github.jballoffet.helloros;
+package com.github.ros.android.helloros;
 
 import org.ros.concurrent.CancellableLoop;
 import org.ros.namespace.GraphName;
@@ -28,8 +28,6 @@ public class Talker extends AbstractNodeMain {
   public void onStart(final ConnectedNode connectedNode) {
     final Publisher<std_msgs.String> publisher =
         connectedNode.newPublisher(topic_name, std_msgs.String._TYPE);
-    // This CancellableLoop will be canceled automatically when the node shuts
-    // down.
     connectedNode.executeCancellableLoop(new CancellableLoop() {
       private int sequenceNumber;
 

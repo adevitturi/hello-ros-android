@@ -20,7 +20,7 @@ android {
   }
   productFlavors {
     kinetic {
-      applicationId "com.github.jballoffet.helloros.kinetic"
+      applicationId "com.github.ros.android.helloros.kinetic"
     }
   }
   lintOptions {
