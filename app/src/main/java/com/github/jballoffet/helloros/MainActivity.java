@@ -22,7 +22,7 @@ public class MainActivity extends RosActivity {
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.main);
+    setContentView(R.layout.activity_main);
     rosTextView = (RosTextView<std_msgs.String>) findViewById(R.id.text);
     rosTextView.setTopicName("chatter");
     rosTextView.setMessageType(std_msgs.String._TYPE);
